@@ -39,6 +39,9 @@
             <% if(file.isImage) { %>
             <img class="img-fluid" src="image/<%= file.filename %>" alt="" />
             <% } else { %> <%= file.filename %> <% } %>
+            <form method="POST" action="/files/<%= file._id %>?_method=DELETE">
+              <button class="btn btn-danger btn-block mt-4">Delete</button>
+            </form>
           </div>
           <% })%> <% } else { %>
           <p>No files to show</p>
